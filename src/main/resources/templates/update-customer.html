@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<title>Update Customer</title>
+</head>
+<body style="background-color:beige;">
+	<div class="container mt-4">
+		<div class="row text-center">
+	       	<div class="col-12">
+				<div class="row p-3 g-3">
+    				<form action="#" class="row p-3 g-3" th:action="@{/update/{id}(id=${customer.customerId})}" th:object="${customer}" method="post">
+    
+	    				<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="customerFirstName" style="font-weight: bold;">First Name</label>
+								</div>
+								<div class="col-8">							
+									<input type="text" class="form-control" th:field="*{customerFirstName}" id="customerFirstName" placeholder="Customer First Name" required>
+									<span th:if="${#fields.hasErrors('customerFirstName')}" th:errors="*{customerFirstName}"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="customerLastName" style="font-weight: bold;">Last Name</label>
+								</div>
+								<div class="col-8">							
+									<input type="text" class="form-control" th:field="*{customerLastName}" id="customerLastName" placeholder="Customer Last Name" required>
+									<span th:if="${#fields.hasErrors('customerLastName')}" th:errors="*{customerLastName}"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="customerEmail" style="font-weight: bold;">Email</label>
+								</div>
+								<div class="col-8">							
+									<input type="email" class="form-control" th:field="*{customerEmail}" id="customerEmail" placeholder="Customer Email" required>
+		    						<span th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="phone" style="font-weight: bold;">Phone</label>
+								</div>
+								<div class="col-8">							
+									<input type="text" class="form-control" th:field="*{phone}" id="phone" placeholder="Phone" required>
+		    						<span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="addressLine1" style="font-weight: bold;">Address Line 1</label>
+								</div>
+								<div class="col-8">							
+									<input type="text" class="form-control" th:field="*{addressLine1}" id="addressLine1" placeholder="Address Line 1" required>
+		    						<span th:if="${#fields.hasErrors('addressLine1')}" th:errors="*{addressLine1}"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="addressLine2" style="font-weight: bold;">Address Line 2</label>
+								</div>
+								<div class="col-8">							
+									<input type="text" class="form-control" th:field="*{addressLine2}" id="addressLine2" placeholder="Address Line 2" required>
+		    						<span th:if="${#fields.hasErrors('addressLine2')}" th:errors="*{addressLine2}"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="city" style="font-weight: bold;">City</label>
+								</div>
+								<div class="col-8">							
+									<input type="text" class="form-control" th:field="*{city}" id="addressLine2" placeholder="City" required>
+		    						<span th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="state" style="font-weight: bold;">State: </label>
+								</div>
+								<div class="col-8">
+	  								<select class="form-control" th:field="*{state}" id="state" placeholder="State" required>    
+						        	  <option value="">Please Select</option>
+									  <option value="Alberta">Alberta</option>
+									  <option value="British Columbia">British Columbia</option>
+									  <option value="Manitoba">Manitoba</option>
+									  <option value="New Brunswick">New Brunswick</option>
+									  <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+									  <option value="Northwest Territories">Northwest Territories</option>
+									  <option value="Nova Scotia">Nova Scotia</option>
+									  <option value="Nunavut">Nunavut</option>
+									  <option value="Ontario">Ontario</option>
+									  <option value="Prince Edward Island">Prince Edward Island</option>
+									  <option value="Quebec">Quebec</option>
+									  <option value="Saskatchewan">Saskatchewan</option>
+									  <option value="Yukon">Yukon</option>								        
+						      		</select>
+						      		<span th:if="${#fields.hasErrors('state')}" th:errors="*{state}"></span>
+								</div>
+							</div>
+						</div>
+							
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="postalCode" style="font-weight: bold;">Postal Code</label>
+								</div>
+								<div class="col-8">							
+									<input type="text" class="form-control" th:field="*{postalCode}" id="postalCode" placeholder="Postal Code" required>
+		    						<span th:if="${#fields.hasErrors('postalCode')}" th:errors="*{postalCode}"></span>
+								</div>
+							</div>
+						</div>
+							
+						<div class="col-12 p-2">
+							<div class="row">
+								<div class="col-4">
+									<label for="creditLimit" style="font-weight: bold;">Credit Limit</label>
+								</div>
+								<div class="col-8">							
+									<input type="number" class="form-control" min="0" value="0" th:field="*{creditLimit}" id="creditLimit" placeholder="Credit Limit" required>
+		    						<span th:if="${#fields.hasErrors('creditLimit')}" th:errors="creditLimit"></span>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-2">
+							<div class="row text-center">
+								 <div class="col-12">
+									<button type="submit" class="btn btn-lg btn-success">Edit Customer</button>
+								</div>
+							</div>
+						</div>
+						
+						<div class="col-12 p-4">
+							<div class="row text-center">
+								 <div class="col-12">
+									<a href="\" class="btn btn-lg btn-primary">Main Page</a>
+								</div>
+							</div>
+						</div>
+					
+					</form> 
+				</div>
+			</div>
+		</div>
+	</div> 
+</body>
+</html>
